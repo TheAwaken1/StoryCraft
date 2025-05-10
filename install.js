@@ -42,7 +42,7 @@ module.exports = {
           "COQUI_TTS_AGREE_LICENSE": "1",
           "CMAKE_ARGS": "-DGGML_CUDA=on" // CMAKE_ARGS set here
         },
-        "message": "pip cache purge && pip install coqui-tts==0.25.3 --no-cache-dir --use-pep517"
+        "message": "pip install coqui-tts==0.25.3 --no-cache-dir --use-pep517"
       }
     },
     {
