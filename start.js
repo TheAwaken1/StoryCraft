@@ -1,12 +1,15 @@
 module.exports = {
   daemon: true,
   run: [
+    // Edit this step to customize your app's launch command
     {
       method: "shell.run",
       params: {
         venv: "env",                // Edit this to customize the venv folder path
-        env: { },                   // Edit this to customize environment variables (see documentation)
-        path: "app",                // Edit this to customize the path to start the shell from
+        env: {
+          "COQUI_TTS_AGREE_LICENSE": "1"  // Automate Coqui TTS license agreement
+        }, 
+        path: "app",                  // Edit this to customize environment variables (see documentation)
         message: [
           "python app.py",    // Edit with your custom commands
         ],
@@ -22,14 +25,15 @@ module.exports = {
         }]
       }
     },
+    // This step sets the local variable 'url'.
+    // This local variable will be used in pinokio.js to display_allocateMemory the "Open WebUI" tab when the value is set.
     {
-      // This step sets the local variable 'url'.
-      // This local variable will be used in pinokio.js to display the "Open WebUI" tab when the value is set.
       method: "local.set",
       params: {
         // the input.event is the regular expression match object from the previous step
         url: "{{input.event[0]}}"
       }
-    }
+    },
   ]
 }
+

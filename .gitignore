@@ -1,2 +1,13 @@
-node_modules
+# Directory created by install.js to clone StoryCraft-AI
+app/
+
+# Optional: Cache folder if your launcher scripts create one at the root
+# cache/
+
+# OS-generated files
 .DS_Store
+Thumbs.db
+
+# IDE-specific folders (good practice)
+.vscode/
+.idea/
