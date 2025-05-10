@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "3.7",
   title: "StoryCraft",
-  description: "",
+  description: "Generate engaging 1 to 5-minute short stories with LLMs and convert them to audio with Coqui TTS, supports voice cloning, built in speakers and multilingual.",
   icon: "icon.png",
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")

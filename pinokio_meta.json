@@ -1,4 +1,19 @@
 {
-  "links": [],
-  "posts": []
+  "links": [
+    {
+      "title": "x",
+      "value": "https://x.com/https://x.com/TheAwakenOne619"
+    },
+    {
+      "title": "github",
+      "value": "https://github.com/https://github.com/TheAwaken1"
+    },
+    {
+      "title": "bitcoin",
+      "value": "3NPZSTatpNw4V6EksJKk3LbjM2s7jNQD9F"
+    }
+  ],
+  "posts": [
+    "https://x.com/TheAwakenOne619/status/1919118359679176837",
+  ]
 }

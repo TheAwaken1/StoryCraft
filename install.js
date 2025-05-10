@@ -23,7 +23,38 @@ module.exports = {
         }
       }
     },
+    // Pip upgrade
+    {
+      "method": "shell.run",
+      "params": {
+          "venv": "env",
+          "path": "app",
+          "message": "python.exe -m pip install --upgrade pip"
+      }
+    },
     // Edit this step with your custom install commands
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "env",
+        "path": "app",
+        "env": {
+          "COQUI_TTS_AGREE_LICENSE": "1",
+          "CMAKE_ARGS": "-DGGML_CUDA=on" // CMAKE_ARGS set here
+        },
+        "message": "pip cache purge && pip install coqui-tts==0.25.3 --no-cache-dir --use-pep517"
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: [
+          "uv pip install bitsandbytes>=0.43.0"
+        ],
+      }
+    },
     {
       method: "shell.run",
       params: {
@@ -33,6 +64,16 @@ module.exports = {
           "uv pip install gradio devicetorch",
           "uv pip install -r requirements.txt"
         ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: [
+            "python -c \"import nltk, os; nltk_data_path = os.path.join(os.getcwd(), 'nltk_data'); os.makedirs(nltk_data_path, exist_ok=True); nltk.data.path.append(nltk_data_path); nltk.download('punkt', download_dir=nltk_data_path, quiet=True); print('NLTK punkt downloaded to', nltk_data_path)\""
+        ],  
       }
     },
   ]
